@@ -1,0 +1,6 @@
+--extra-index-url=https://databricks-dash.aws.plotly.host/packages
+dash-design-kit==1.8.2
+dash==2.13.0
+gunicorn==20.0.4
+pandas>=1.1.5
+

@@ -1,0 +1,19 @@
+/* typewriter.css */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+  }
+  
+  .typewriter-text {
+    font-family: monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid black; /* The caret (cursor) */
+    animation: blink-caret .75s step-end infinite;
+  }
+  
