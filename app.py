@@ -160,71 +160,71 @@ def apply_ai_query_to_dataframe(query):
     
     return transformed_df
 
-def ai_generated_chart(query):
+# def ai_generated_chart(query):
 
-    """
-    Applies an AI-driven query to a DataFrame and returns the transformed DataFrame.
+#     """
+#     Applies an AI-driven query to a DataFrame and returns the transformed DataFrame.
 
-    Parameters:
-    - df: The input DataFrame to transform.
-    - query: The AI-driven query as a string.
+#     Parameters:
+#     - df: The input DataFrame to transform.
+#     - query: The AI-driven query as a string.
 
-    Returns:
-    - The transformed DataFrame as a result of the AI query.
-    """
-    os.environ['OPENAI_API_KEY'] = "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"
+#     Returns:
+#     - The transformed DataFrame as a result of the AI query.
+#     """
+#     os.environ['OPENAI_API_KEY'] = "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"
 
 
 
-    # Initialize your Spark session and AI tool here
-    os.environ["USER"] = "anything"
-    spark = DatabricksSession.builder.remote(
-    "sc://plotly-customer-success.cloud.databricks.com:443/;token=dapic65e825bf500366e1fb87ab797d3e4fd;x-databricks-cluster-id=0220-164842-cm74ic3a"
-        ).getOrCreate()
-    spark_ai = SparkAI()
-    spark_ai.activate()
-    # auto sales data from https://www.carpro.com/blog/full-year-2022-national-auto-sales-by-brand
-    df = dbe.demo_data.world_bank()
-    data = [('Toyota', 1849751, -9), ('Ford', 1767439, -2), ('Chevrolet', 1502389, 6),
-        ('Honda', 881201, -33), ('Hyundai', 724265, -2), ('Kia', 693549, -1),
-        ('Jeep', 684612, -12), ('Nissan', 682731, -25), ('Subaru', 556581, -5),
-        ('Ram Trucks', 545194, -16), ('GMC', 517649, 7), ('Mercedes-Benz', 350949, 7),
-        ('BMW', 332388, -1), ('Volkswagen', 301069, -20), ('Mazda', 294908, -11),
-        ('Lexus', 258704, -15), ('Dodge', 190793, -12), ('Audi', 186875, -5),
-        ('Cadillac', 134726, 14), ('Chrysler', 112713, -2), ('Buick', 103519, -42),
-        ('Acura', 102306, -35), ('Volvo', 102038, -16), ('Mitsubishi', 102037, -16),
-        ('Lincoln', 83486, -4), ('Porsche', 70065, 0), ('Genesis', 56410, 14),
-        ('INFINITI', 46619, -20), ('MINI', 29504, -1), ('Alfa Romeo', 12845, -30),
-        ('Maserati', 6413, -10), ('Bentley', 3975, 0), ('Lamborghini', 3134, 3),
-        ('Fiat', 915, -61), ('McLaren', 840, -35), ('Rolls-Royce', 460, 7)]
+#     # Initialize your Spark session and AI tool here
+#     os.environ["USER"] = "anything"
+#     spark = DatabricksSession.builder.remote(
+#     "sc://plotly-customer-success.cloud.databricks.com:443/;token=dapic65e825bf500366e1fb87ab797d3e4fd;x-databricks-cluster-id=0220-164842-cm74ic3a"
+#         ).getOrCreate()
+#     spark_ai = SparkAI()
+#     spark_ai.activate()
+#     # auto sales data from https://www.carpro.com/blog/full-year-2022-national-auto-sales-by-brand
+#     df = dbe.demo_data.world_bank()
+#     data = [('Toyota', 1849751, -9), ('Ford', 1767439, -2), ('Chevrolet', 1502389, 6),
+#         ('Honda', 881201, -33), ('Hyundai', 724265, -2), ('Kia', 693549, -1),
+#         ('Jeep', 684612, -12), ('Nissan', 682731, -25), ('Subaru', 556581, -5),
+#         ('Ram Trucks', 545194, -16), ('GMC', 517649, 7), ('Mercedes-Benz', 350949, 7),
+#         ('BMW', 332388, -1), ('Volkswagen', 301069, -20), ('Mazda', 294908, -11),
+#         ('Lexus', 258704, -15), ('Dodge', 190793, -12), ('Audi', 186875, -5),
+#         ('Cadillac', 134726, 14), ('Chrysler', 112713, -2), ('Buick', 103519, -42),
+#         ('Acura', 102306, -35), ('Volvo', 102038, -16), ('Mitsubishi', 102037, -16),
+#         ('Lincoln', 83486, -4), ('Porsche', 70065, 0), ('Genesis', 56410, 14),
+#         ('INFINITI', 46619, -20), ('MINI', 29504, -1), ('Alfa Romeo', 12845, -30),
+#         ('Maserati', 6413, -10), ('Bentley', 3975, 0), ('Lamborghini', 3134, 3),
+#         ('Fiat', 915, -61), ('McLaren', 840, -35), ('Rolls-Royce', 460, 7)]
 
-    auto_df = spark_ai._spark.createDataFrame(data, ["Brand", "US_Sales_2022", "Sales_Change_Percentage"])
-    # df_pyspark = spark.createDataFrame(df)
-    # data = [[295, "South Bend", "Indiana", "IN", 101190, 112.9]]
-    # columns = ["rank", "city", "state", "code", "population", "price"]
+#     auto_df = spark_ai._spark.createDataFrame(data, ["Brand", "US_Sales_2022", "Sales_Change_Percentage"])
+#     # df_pyspark = spark.createDataFrame(df)
+#     # data = [[295, "South Bend", "Indiana", "IN", 101190, 112.9]]
+#     # columns = ["rank", "city", "state", "code", "population", "price"]
 
-    # df_pyspark = spark_ai._spark.sql("SELECT * FROM samples.nyctaxi.trips")
-    # Example data for creating a DataFrame
-    data = [("Java", "20000"), ("Python", "100000"), ("Scala", "3000")]
-    columns = ["Language", "Users"]
+#     # df_pyspark = spark_ai._spark.sql("SELECT * FROM samples.nyctaxi.trips")
+#     # Example data for creating a DataFrame
+#     data = [("Java", "20000"), ("Python", "100000"), ("Scala", "3000")]
+#     columns = ["Language", "Users"]
 
-    # Create a DataFrame using SparkSession
-    df_pyspark = spark.createDataFrame(data, schema=columns)
-    # df_pyspark = spark.createDataFrame(data, schema="rank LONG, city STRING, state STRING, code STRING, population LONG, price DOUBLE")
+#     # Create a DataFrame using SparkSession
+#     df_pyspark = spark.createDataFrame(data, schema=columns)
+#     # df_pyspark = spark.createDataFrame(data, schema="rank LONG, city STRING, state STRING, code STRING, population LONG, price DOUBLE")
 
-    if isinstance(df_pyspark, DataFrame):
-        print("df_pyspark is a PySpark DataFrame.")
-    else:
-        print("df_pyspark is not a PySpark DataFrame.")
-    if isinstance(auto_df, DataFrame):
-        print("auto_df is a PySpark DataFrame.")
-    else:
-        print("auto_df is not a PySpark DataFrame.")
-    # call plot() with no args for LLM-generated plot
-    string = auto_df.ai.plot()
+#     if isinstance(df_pyspark, DataFrame):
+#         print("df_pyspark is a PySpark DataFrame.")
+#     else:
+#         print("df_pyspark is not a PySpark DataFrame.")
+#     if isinstance(auto_df, DataFrame):
+#         print("auto_df is a PySpark DataFrame.")
+#     else:
+#         print("auto_df is not a PySpark DataFrame.")
+#     # call plot() with no args for LLM-generated plot
+#     string = auto_df.ai.plot()
     
-    print(string)
-    return string
+#     print(string)
+#     return string
 
 
 # Initialize the OpenAI client with Databricks API token and base URL
@@ -304,12 +304,12 @@ def score_model(selected_model_endpoint, text, model_type_override=None, **kwarg
             
             response = apply_ai_query_to_dataframe(text)
             simplified_response = response  # Or any other format that suits your needs
-            print(f"simplified_response{simplified_response}")  # Debugging
+            # print(f"simplified_response{simplified_response}")  # Debugging
 
-        elif model_type == 'ai-charting':
-            response = ai_generated_chart(text)
-            simplified_response = response
-            print(f"simplified_response{simplified_response}")  # Debugging
+        # elif model_type == 'ai-charting':
+        #     response = ai_generated_chart(text)
+        #     simplified_response = response
+        #     print(f"simplified_response{simplified_response}")  # Debugging
             
 
         elif model_type == 'completion':
@@ -342,43 +342,54 @@ def score_model(selected_model_endpoint, text, model_type_override=None, **kwarg
         raise Exception(f"Query failed: {e}")
 
 
-
-def generate_ai_chart(query):
+def generate_ai_chart(query, df):
     # Assuming `client` is already initialized with your OpenAI API key
+    
+    START_CODE_TAG = "```python"
+    END_CODE_TAG = "\nfig.show()\n```"
+
+    prompt = f"You are ChartGPT, a data scientist working at a startup. You are asked to analyze a dataset and create a chart. " \
+             f"You are given a dataset with the following columns: {query}. " \
+             "When asked about the data, your response must include Python code that uses the " \
+             "Plotly library to make a chart using a dataframe `df`. If necessary, you can filter " \
+             "the dataframe `df`. You can use any chart type you want. " \
+             f"Return the Python code, and make sure to prefix the " \
+             f"requested Python code with {START_CODE_TAG} exactly and suffix the code with " \
+             f"{END_CODE_TAG}"
+
     chart_response = client.chat.completions.create(
         model="databricks-mixtral-8x7b-instruct",
-        messages=[{"role": "user", "content": f"create a plotly figure with {query}"}],  # Corrected closing square bracket
+        messages=[{"role": "user", "content": prompt}],
         max_tokens=800,
         temperature=0.1
     ).dict()  # Convert the response to a dictionary
     print(chart_response)  # For debugging
-    # Initialize variable for figure output
-    fig = None
-
-    # Check if 'choices' in the response and has content
+    
     if 'choices' in chart_response and chart_response['choices']:
-        # Extract the first choice's text as the response
         response_text = chart_response['choices'][0]['message']['content']
         
-        # Define a pattern to extract the Python code for figure creation
-        code_pattern = re.compile(r"```python\n(.*?)\n```", re.DOTALL)
+        # Extract the code snippet between START_CODE_TAG and END_CODE_TAG
+        code_pattern = re.compile(re.escape(START_CODE_TAG) + r"(.*?)" + re.escape(END_CODE_TAG), re.DOTALL)
         code_match = code_pattern.search(response_text)
-        
+
         if code_match:
-            # Extract the code snippet for figure creation
             figure_code = code_match.group(1)
-            
-            # Execute the extracted code
-            # Ensure that you have defined or imported necessary modules like plotly.graph_objects as go
+            local_namespace = {
+                'df': df,  # Provide the DataFrame as 'df' in the local namespace for the code execution
+                'px': px,  # Provide plotly.express as px in the local namespace for the code execution
+            }
+
             try:
-                exec(figure_code, globals())
-                # Assuming the executed code assigns the figure to a variable named 'fig'
-                # and 'fig' is a Plotly figure object
+                # Execute the extracted code in a local namespace
+                exec(figure_code, globals(), local_namespace)
+
+                # Retrieve 'fig' from the local namespace if it exists
+                fig = local_namespace.get('fig', None)
                 return fig
             except Exception as e:
                 print(f"Failed to execute figure code: {e}")
+    return None
 
-    return fig
     
 import re
 
@@ -397,9 +408,11 @@ def extract_response(api_response):
 
     if isinstance(api_response, pd.DataFrame):
         # Handle pandas DataFrame responses
-        graph_query = api_response.to_string(index=False)
+        graph_query_columns = api_response.columns
+        print(graph_query_columns)  # For debugging
+        print(api_response)  # For debugging
         # Assuming `api_response` is a pandas DataFrame, convert it to a Plotly figure
-        figure_json = generate_ai_chart(graph_query)
+        figure_json = generate_ai_chart(graph_query_columns, api_response)
         return figure_json
 
     elif isinstance(api_response, list):
@@ -602,8 +615,8 @@ def layout():
                                     ), 
                                 ),
                                 dmc.Space(h=20),
-                                html.Div([
-                                dcc.Graph(id='plotly-figure-display')
+                                html.Div(children=[
+                                dcc.Graph(id='plotly-figure-display', figure={})
                                 ]),
                                 dmc.Paper(
                                     children=[
@@ -704,12 +717,13 @@ from dash.dependencies import Input, Output, State
 from dash import html
 from dash.dependencies import Input, Output, State, ClientsideFunction
 import time  # For generating a timestamp
-
+import plotly.graph_objects as go
 from dash import dcc, html, Output, Input, State, no_update, callback_context
 import json
 
 from dash import no_update
 import json
+
 
 @app.callback(
     [
@@ -756,8 +770,12 @@ def update_output_and_typewriter(n_clicks, selected_model_endpoint, input_text, 
                 # Handle Plotly figure if present
                 if 'figure' in model_response:
                     figure_output = model_response['figure']
+                    print(figure_output)  # For debugging
+                    figure_output = go.Figure(data=figure_output)  # Convert to a Plotly figure
                 elif 'figure_json' in model_response:
                     figure_output = json.loads(model_response['figure_json'])
+                    figure_output = go.Figure(data=figure_output) 
+                    print(figure_output)
             else:
                 # Update with textual response if it's not a dictionary
                 chat_history.append({'sender': 'model', 'text': model_response})
