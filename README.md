@@ -12,7 +12,7 @@ This project provides a web-based interface for interacting with machine learnin
 
 ### Prerequisites
 
-- Python 3.6 or later
+- Python 3.10 or later
 - Databricks account
 - Hugging Face models (for registration)
 
