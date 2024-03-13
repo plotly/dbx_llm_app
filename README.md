@@ -12,9 +12,24 @@ This project provides a web-based interface for interacting with machine learnin
 
 ### Prerequisites
 
+In order to run this app, you will need to make sure you have the following items:
+
 - Python 3.10 or later
 - Databricks account
 - Hugging Face models (for registration)
+
+Databricks-specific items:
+- A Databricks workspace with Unity Catalog enabled
+        This workspace is where you'll be pulling models from Hugging Face, logging them, and deploying them. It's essential that your account has the permissions needed to create clusters, jobs, and manage models.
+- A personal access token to authenticate with Databricks SDK workspace client
+- A Python development environment running Python3.10
+ Having a functional development environment for Plotly Dash is crucial. Dash is a Python framework for building data applications. Follow the instructions in this project’s README.md file on Github (link) in order to deploy this project’s Dash app.  If you are looking for a quickstart guide to Dash, check out our Dash in 20 minutes tutorial here. 
+
+
+*** In addition, the user whose personal access token you choose to use must have CREATE MODEL permissions enabled. (see below) ***
+
+<img width="616" alt="Screenshot 2024-03-11 at 10 02 30 AM" src="https://github.com/plotly/dbx_llm_app/assets/49540501/d8f9c9ee-8cf7-41af-80c4-67a86bee42b9">
+
 
 ### Installation
 
