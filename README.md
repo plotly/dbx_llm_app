@@ -20,7 +20,7 @@ This project provides a web-based interface for interacting with machine learnin
 
 1. Clone the repository to your local machine:
 
-''' git clone https://github.com/yourgithubusername/yourrepositoryname.git '''
+'''git clone https://github.com/yourgithubusername/yourrepositoryname.git'''
 
 
 2. Navigate to the cloned directory:
