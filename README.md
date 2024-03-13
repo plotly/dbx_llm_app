@@ -20,30 +20,34 @@ This project provides a web-based interface for interacting with machine learnin
 
 1. Clone the repository to your local machine:
 
-'''git clone https://github.com/yourgithubusername/yourrepositoryname.git'''
+```python 
+git clone https://github.com/yourgithubusername/yourrepositoryname.git
+```
 
 
 2. Navigate to the cloned directory:
 
-cd yourrepositoryname
+```cd dashdbxhf```
 
 
 3. Install the required Python dependencies:
 
-''' pip install -r requirements.txt '''
+```pip install -r requirements.txt```
 
 
 4. Set up your environment variables by creating a `.env` file in the root directory and adding your Databricks token and host:
 
+```
 DATABRICKS_TOKEN=your_databricks_token
 DATABRICKS_HOST=https://your-databricks-workspace-url
+```
 
 
 ### Running the Application
 
 1. Start the Dash application:
 
-python app.py
+```python app.py```
 
 
 2. Open a web browser and navigate to `http://localhost:8050/` to access the application.
@@ -83,7 +87,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Your Name - your@email.com
+Sachin- sachin@plot.ly
 
-Project Link: [https://github.com/yourgithubusername/yourrepositoryname](https://github.com/yourgithubusername/yourrepositoryname)
+
 
