@@ -13,6 +13,27 @@ import openai
 from openai import OpenAI
 from sqlalchemy import create_engine
 
+# Standard Library Imports
+import json
+import os
+import re
+import time
+
+# Third-party Library Imports
+import dash
+import dash_mantine_components as dmc
+import openai
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+import requests
+from dash import dcc, html, callback, no_update
+from dash.dependencies import Input, Output, State
+from dash_iconify import DashIconify
+from dotenv import load_dotenv
+from openai import OpenAI
+from sqlalchemy import create_engine
+
 # Databricks Imports
 from databricks import sql, sqlalchemy
 from databricks.connect import DatabricksSession
@@ -22,34 +43,6 @@ from databricks.sdk.service import jobs
 # Pyspark Imports
 from pyspark.sql import DataFrame
 from pyspark_ai import SparkAI
-
-
-# Local/Application Specific Imports
-
-  
-import re
-
-import pandas as pd
-import re
-import plotly.express as px
-
-import json
-
-from dash import dcc, html
-import dash_mantine_components as dmc
-from dash.dependencies import Input, Output, State
-
-from dash import html
-from dash.dependencies import Input, Output, State, ClientsideFunction
-import time  # For generating a timestamp
-import plotly.graph_objects as go
-from dash import dcc, html, Output, Input, State, no_update, callback_context
-import json
-
-from dash import no_update
-import json
-
-from dotenv import load_dotenv
 
 load_dotenv()
 # Note: Commented out import for 'langchain_openai.ChatOpenAI' as it seems to be unused or specific to an external module not provided here.
