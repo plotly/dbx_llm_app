@@ -2,6 +2,13 @@
 
 This project provides a web-based interface for interacting with machine learning models served on Databricks, featuring functionalities to register new Hugging Face models, chat with these models, and view chat history. Built with Dash and leveraging Databricks for model serving, it offers a user-friendly platform for experimenting with and deploying machine learning models.
 
+<div align="center">
+  <a href="https://dash.plotly.com/project-maintenance">
+    <img src="https://dash.plotly.com/assets/images/maintained-by-plotly.png" width="400px" alt="Maintained by Plotly">
+  </a>
+</div>
+
+
 ## Features
 
 - **Model Registration**: Easily register new Hugging Face models with Databricks and create serving endpoints directly from the interface.
